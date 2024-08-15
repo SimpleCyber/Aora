@@ -27,7 +27,7 @@ Here’s a glimpse of the main pages of the app:
 You can install the app on your Android device by clicking the link below or scanning the QR code:
 
 - **[Install the App](https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39)**
-- Or scan the QR code in [images/qr.jpg](https://github.com/SimpleCyber/Aora/blob/main/images/qr.jpg)
+- Or scan the QR code in ![QR](https://github.com/SimpleCyber/Aora/blob/main/images/qr.jpg)
 
 ### Clone the Repository
 
