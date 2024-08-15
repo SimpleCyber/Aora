@@ -20,12 +20,22 @@ Here’s a glimpse of the main pages of the app:
 |------------|-----------|----------|------------|-------------|
 | ![Signup](https://github.com/SimpleCyber/Aora/blob/main/images/signup.jpg) | ![Login](https://github.com/SimpleCyber/Aora/blob/main/images/login.jpg) | ![Home](https://github.com/SimpleCyber/Aora/blob/main/images/home.jpg) | ![Create](https://github.com/SimpleCyber/Aora/blob/main/images/create.jpg) | ![Profile](https://github.com/SimpleCyber/Aora/blob/main/images/profile.jpg) |
 
-## 🚀 Getting Started
+## 🚀 App Installation 
 
 You can install the app on your Android device by clicking the link below or scanning the QR code:
 
-| **[Install the App] click the link 👉🏻** [https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39](https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39) | <img src="https://github.com/SimpleCyber/Aora/blob/main/images/qr.jpg" alt="QR Code" width="200" height="200"> |
-|:-----------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------:|
+<table>
+  <tr>
+    <td style="width: 50%; text-align: center;">
+      <strong>[Install the App] click the link 👉🏻</strong> <br>
+      <a href="https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39">https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39</a>
+    </td>
+    <td style="width: 50%; text-align: center;">
+      <img src="https://github.com/SimpleCyber/Aora/blob/main/images/qr.jpg" alt="QR Code" width="200" height="200">
+    </td>
+  </tr>
+</table>
+
 
 
 ### Clone the Repository
