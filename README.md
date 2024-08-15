@@ -27,7 +27,7 @@ You can install the app on your Android device by clicking the link below or sca
 <table>
   <tr>
     <td style="width: 50%; text-align: center;">
-      <strong>[Install the App] click the link 👉🏻</strong> <br>
+      <strong>[Install the App] click the link 👇</strong> <br>
       <a href="https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39">https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39</a>
     </td>
     <td style="width: 50%; text-align: center;">
