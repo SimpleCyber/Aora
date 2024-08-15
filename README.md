@@ -4,17 +4,13 @@
 
 ## 📱 App Features
 
-- **Onboarding Screen**: Welcomes users with engaging graphics and clear instructions.
-- **Secure Authentication**: Email-based login system ensuring user account security.
-- **Dynamic Home Screen**: Animated flat list showcasing the latest videos.
-- **Pull-to-Refresh**: Refresh content with a simple pull gesture for the latest updates.
-- **Full-Text Search**: Real-time search suggestions and instant results.
-- **Tab Navigation**: Smooth navigation between Home, Search, and Profile sections.
-- **Media Upload**: Create and upload video/image posts directly from the app.
-- **Profile Screen**: View detailed account insights, including uploaded content and follower count.
-- **Responsive Design**: Optimized performance across various devices and screen sizes.
-- **Dynamic Animations**: Enhances user interaction using the Animatable library.
-- **And much more**: Including well-structured code architecture and reusability.
+- **Secure Authentication**
+- **Dynamic Home Screen**
+- **Pull-to-Refresh**
+- **Full-Text Search**
+- **Tab Navigation**
+- **Media Upload**
+- **Profile Screen**
 
 ## 🖼️ App Screenshots
 
@@ -40,15 +36,6 @@ To explore the code or contribute to the project, clone the repository using the
 ```bash
 git clone https://github.com/SimpleCyber/Aora.git
 ```
-
-### Available Pages
-
-- **Signup**
-- **Login**
-- **Home**
-- **Create**
-- **Profile**
-
 ## 📚 Tech Stack
 
 - **Frontend**: React Native, Expo
@@ -89,7 +76,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any feature additions, bug fixes, or improvements.
-
----
-
-This layout includes images for the Signup, Login, Home, Create, and Profile pages in a single row. Make sure the images are correctly located in the `images` folder in your GitHub repository for the links to work properly.
