@@ -1,0 +1,21 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "typeRoots": ["./src/types", "node_modules/@types"]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "src/types/**/*.d.ts",
+    "context/GlobalProvider.tsx",
+    "lib/appwrite.ts",
+    "lib/useAppwrite.ts",
+    "nativewind-env.d.ts"
+  ]
+}

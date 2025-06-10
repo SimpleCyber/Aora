@@ -1,87 +1,50 @@
-# Aora
+# Welcome to your Expo app 👋
 
-**Aora** is a full-stack React Native application designed to provide users with a seamless experience for browsing and interacting with video content. This app includes features like dynamic home screens, robust authentication, and engaging animations.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## 📱 App Features
+## Get started
 
-- **Secure Authentication**
-- **Dynamic Home Screen**
-- **Pull-to-Refresh**
-- **Full-Text Search**
-- **Tab Navigation**
-- **Media Upload**
-- **Profile Screen**
-
-## 🖼️ App Screenshots
-
-Here’s a glimpse of the main pages of the app:
-
-| **Signup** | **Login** | **Home** | **Create** | **Profile** |
-|------------|-----------|----------|------------|-------------|
-| ![Signup](https://github.com/SimpleCyber/Aora/blob/main/images/signup.jpg) | ![Login](https://github.com/SimpleCyber/Aora/blob/main/images/login.jpg) | ![Home](https://github.com/SimpleCyber/Aora/blob/main/images/home.jpg) | ![Create](https://github.com/SimpleCyber/Aora/blob/main/images/create.jpg) | ![Profile](https://github.com/SimpleCyber/Aora/blob/main/images/profile.jpg) |
-
-## 🚀 App Installation 
-
-You can install the app on your Android device by clicking the link below or scanning the QR code:
-
-<table>
-  <tr>
-    <td style="width: 50%; text-align: center;">
-      <strong>[Install the App] click the link 👇</strong> <br>
-      <a href="https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39">https://expo.dev/accounts/dear_coder03/projects/nativeCrashCourse/builds/dd3898bc-6b33-49e0-860c-3160b01fee39</a>
-    </td>
-    <td style="width: 50%; text-align: center;">
-      <img src="https://github.com/SimpleCyber/Aora/blob/main/images/qr.jpg" alt="QR Code" width="200" height="200">
-    </td>
-  </tr>
-</table>
-
-
-
-### Clone the Repository
-
-To explore the code or contribute to the project, clone the repository using the following command:
-
-```bash
-git clone https://github.com/SimpleCyber/Aora.git
-```
-## 📚 Tech Stack
-
-- **Frontend**: React Native, Expo
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Authentication**: JWT (JSON Web Tokens)
-
-## 🛠️ Installation and Setup
-
-1. **Clone the repo:**
-
-   ```bash
-   git clone https://github.com/SimpleCyber/Aora.git
-   cd Aora
-   ```
-
-2. **Install dependencies:**
+1. Install dependencies
 
    ```bash
    npm install
    ```
 
-3. **Start the development server:**
+2. Start the app
 
    ```bash
-   npm start
+   npx expo start
    ```
 
-   You can now open the app in an Android emulator or on a physical device using Expo.
+In the output, you'll find options to open the app in a
 
-4. **Backend setup:**
-   - Make sure to set up the backend by following the instructions in the `backend` folder.
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-## 📄 License
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Get a fresh project
 
-## 🤝 Contributing
+When you're ready, run:
 
-Contributions are welcome! Please fork the repository and submit a pull request for any feature additions, bug fixes, or improvements.
+```bash
+npm run reset-project
+```
+
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+
+## Learn more
+
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

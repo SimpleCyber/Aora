@@ -1,154 +1,39 @@
-# React Native
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
 
-# Android
-android/.gradle/
-android/app/build/
-android/build/
-android/.idea/
-android/local.properties
-android/.cxx/
-android/.DS_Store
-
-# iOS
-ios/Pods/
-ios/build/
-ios/Podfile.lock
-ios/.DS_Store
-ios/.xcuserdata/
-ios/*.xcodeproj/project.xcworkspace/
-ios/*.xcodeproj/xcuserdata/
-
-# Metro, bundler, cache
+# Expo
 .expo/
-.expo-shared/
-*.expo
-*.expo-shared
-*.expo-cache
-*.expo-dev-tools
-*.expo-settings
-*.expo-source-maps
-*.expo-web-debugger
-*.expo-web-debugger-cache
-*.expo-web-debugger-settings
-*.expo-web-debugger-source-maps
-*.expo-web-debugger-web
-*.expo-web-debugger-web-cache
-*.expo-web-debugger-web-settings
-*.expo-web-debugger-web-source-maps
-*.expo-web-debugger-web-web
-*.expo-web-debugger-web-web-cache
-*.expo-web-debugger-web-web-settings
-*.expo-web-debugger-web-web-source-maps
-*.expo-web-debugger-web-web-web
-*.expo-web-debugger-web-web-web-cache
-*.expo-web-debugger-web-web-web-settings
-*.expo-web-debugger-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web
-*.expo-web-debugger-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-cache
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-settings
-*.expo-web-debugger-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-web-source-maps
+dist/
+web-build/
+expo-env.d.ts
 
-# Misc
-*.swp
-*.swo
-*.tmp
-*.log
-.DS_Store
-.env
-.env.*
-.idea/
-.vscode/
-coverage/
-*.iml
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
 
-# Fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
+# Metro
+.metro-health-check*
 
-# Buck
-buck-out/
-\.buckd/
-*.keystore
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 
 # macOS
-*.DS_Store
+.DS_Store
+*.pem
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# local env files
+.env*.local
 
-# Test output
-test-results/
+# typescript
+*.tsbuildinfo
+
+app-example
