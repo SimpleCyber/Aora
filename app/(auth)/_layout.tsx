@@ -6,6 +6,12 @@ const AuthLayout = () => {
 
   return (
     <>
+      
+      <StatusBar 
+        style="light" 
+        backgroundColor="transparent"
+        translucent
+      />
       <Stack>
         <Stack.Screen
           name="sign-in"
@@ -21,7 +27,6 @@ const AuthLayout = () => {
         />
 
       </Stack>
-      <StatusBar backgroundColor='#161622' style='light'/>
     </>
   )
 }

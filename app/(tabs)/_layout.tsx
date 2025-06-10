@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Platform } from 'react-native';
 import { Tabs } from 'expo-router';
 import { icons } from '../../constants';
 
@@ -11,19 +11,38 @@ interface TabIconProps {
 
 const TabIcon: React.FC<TabIconProps> = ({ icon, color, name, focused }) => {
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center', gap: 8 }}>
-      <Image
-        source={icon}
-        resizeMode="contain"
-        tintColor={color}
-        style={{ width: 24, height: 24 }}
-      />
+    <View style={{ 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      gap: 4, // Reduced gap for better proportion
+      paddingVertical: 4,
+      minWidth: 50, // Ensures consistent width for all tabs
+    }}>
+      <View style={{
+        padding: focused ? 6 : 4, // Subtle padding increase when focused
+        borderRadius: 12,
+        backgroundColor: focused ? 'rgba(255, 160, 1, 0.0)' : 'transparent',
+        transform: [{ scale: focused ? 1.1 : 1 }], 
+      }}>
+        <Image
+          source={icon}
+          resizeMode="contain"
+          tintColor={color}
+          style={{ 
+            width: focused ? 22 : 20, 
+            height: focused ? 22 : 20,
+          }}
+        />
+      </View>
       <Text
         style={{
           color: color,
-          fontSize: 12,
+          fontSize: focused ? 11 : 10, 
           fontFamily: focused ? 'Poppins-SemiBold' : 'Poppins-Regular',
+          textAlign: 'center',
+          opacity: focused ? 1 : 0.8, 
         }}
+        numberOfLines={1}
       >
         {name}
       </Text>
@@ -42,8 +61,22 @@ const TabsLayout = () => {
           backgroundColor: '#161622',
           borderTopWidth: 1,
           borderTopColor: '#232533',
-          height: 84,
+          height: Platform.OS === 'ios' ? 88 : 70, 
+          paddingBottom: Platform.OS === 'ios' ? 20 : 10, 
+          paddingTop: 8,
+          paddingHorizontal: 16,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+          elevation: 8,
         },
+        // Smooth transitions
+        tabBarItemStyle: {
+          paddingVertical: 4,
+        },
+        // Better accessibility
+        tabBarAccessibilityLabel: 'Navigation tabs',
       }}
     >
       <Tabs.Screen
@@ -59,6 +92,7 @@ const TabsLayout = () => {
               focused={focused}
             />
           ),
+          tabBarAccessibilityLabel: 'Home tab',
         }}
       />
       <Tabs.Screen
@@ -74,6 +108,7 @@ const TabsLayout = () => {
               focused={focused}
             />
           ),
+          tabBarAccessibilityLabel: 'Bookmark tab',
         }}
       />
       <Tabs.Screen
@@ -89,6 +124,7 @@ const TabsLayout = () => {
               focused={focused}
             />
           ),
+          tabBarAccessibilityLabel: 'Create tab',
         }}
       />
       <Tabs.Screen
@@ -104,6 +140,7 @@ const TabsLayout = () => {
               focused={focused}
             />
           ),
+          tabBarAccessibilityLabel: 'Profile tab',
         }}
       />
     </Tabs>

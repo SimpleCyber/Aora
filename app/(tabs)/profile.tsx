@@ -11,7 +11,6 @@ import { useGlobalContext } from '../../context/GlobalProvider';
 import { icons } from '../../constants';
 import InfoBox from '../../components/InfoBox';
 
-// Define the video type that matches VideoCardProps
 interface VideoType {
   $id: string;
   title: string;
@@ -39,7 +38,6 @@ const Profile: React.FC = () => {
   };
 
   const renderItem = ({ item }: { item: Models.Document }) => {
-    // Transform Models.Document to VideoCardProps format
     const videoData: VideoType = {
       $id: item.$id,
       title: item.title,
@@ -51,70 +49,79 @@ const Profile: React.FC = () => {
       }
     };
     
-    return <VideoCard video={videoData} />;
+    return (
+      <View className="mb-4 mx-4">
+        <VideoCard video={videoData} />
+      </View>
+    );
   };
 
   const ListHeaderComponent = () => (
-    <>
-      <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
-        <TouchableOpacity
-          className="w-full flex items-end mb-10"
-          onPress={logout}
-        >
-          <Image
-            source={icons.logout}
-            resizeMode="contain"
-            className="w-6 h-6"
-          />
-        </TouchableOpacity>
-
-        <View className="w-16 h-16 border border-secondary rounded-lg justify-center items-center">
-          <Image
-            source={{ uri: user?.avatar }}
-            className="w-[90%] h-[90%] rounded-lg"
-            resizeMode="cover"
-          />
-        </View>
-
-        <InfoBox
-          title={user?.username || ''}
-          containerStyles="mt-5"
-          titleStyles="text-lg"
+    <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
+      <TouchableOpacity
+        className="w-full flex items-end mb-10"
+        onPress={logout}
+      >
+        <Image
+          source={icons.logout}
+          resizeMode="contain"
+          className="w-6 h-6"
         />
+      </TouchableOpacity>
 
-        <View className="mt-1 flex-row">
-          <InfoBox
-            title={posts?.length?.toString() || '0'}
-            subtitle="Posts"
-            containerStyles="mr-5"
-            titleStyles="text-xl"
-          />
-          <InfoBox
-            title="1.2k"
-            subtitle="Followers"
-            containerStyles="ml-5"
-            titleStyles="text-xl"
-          />
-        </View>
+      <View className="w-16 h-16 border border-secondary rounded-lg justify-center items-center">
+        <Image
+          source={{ uri: user?.avatar }}
+          className="w-[90%] h-[90%] rounded-lg"
+          resizeMode="cover"
+        />
       </View>
-    </>
+
+      <InfoBox
+        title={user?.username || ''}
+        containerStyles="mt-5"
+        titleStyles="text-lg"
+      />
+
+      <View className="mt-1 flex-row">
+        <InfoBox
+          title={posts?.length?.toString() || '0'}
+          subtitle="Posts"
+          containerStyles="mr-5"
+          titleStyles="text-xl"
+        />
+        <InfoBox
+          title="1.2k"
+          subtitle="Followers"
+          containerStyles="mx-5"
+          titleStyles="text-xl"
+        />
+        <InfoBox
+          title="1.2k"
+          subtitle="Following"
+          containerStyles="ml-5"
+          titleStyles="text-xl"
+        />
+      </View>
+    </View>
   );
 
   const ListEmptyComponent = () => (
     <EmptyState
       title="No Videos Found"
-      subtitle="No videos found for this user"
+      subtitle="No videos found for this profile"
     />
   );
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <FlatList<Models.Document>
+      <FlatList
         data={posts}
         keyExtractor={(item: Models.Document) => item.$id}
         renderItem={renderItem}
         ListHeaderComponent={ListHeaderComponent}
         ListEmptyComponent={ListEmptyComponent}
+        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   );

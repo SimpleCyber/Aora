@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import * as ImagePicker from 'expo-image-picker';
-import { Video, ResizeMode } from 'expo-av';
+import { VideoView, useVideoPlayer } from 'expo-video';
 import { icons } from '../../constants';
 import { router } from 'expo-router';
 import { createVideo } from '../../lib/appwrite';
@@ -17,11 +17,6 @@ type FormState = {
   prompt: string;
 };
 
-
-
-
-
-
 const Create = () => {
   const { user } = useGlobalContext();
 
@@ -31,6 +26,13 @@ const Create = () => {
     video: null,
     thumbnail: null,
     prompt: '',
+  });
+
+  // Create video player - always call the hook
+  const player = useVideoPlayer(form.video?.uri || '', (player) => {
+    if (form.video?.uri) {
+      player.replace(form.video.uri);
+    }
   });
 
   const openPicker = async (selectType: 'image' | 'video') => {
@@ -54,56 +56,54 @@ const Create = () => {
   };
 
   const submit = async () => {
-  if (!form.prompt || !form.title || !form.video || !form.thumbnail) {
-    return Alert.alert('Please fill in all the fields');
-  }
-
-  if (!user) {
-    return Alert.alert('Error', 'You must be logged in to upload a video.');
-  }
-
-  setUploading(true);
-
-  try {
-    await createVideo({
-      userId: user.$id,
-      title: form.title,
-     video: {
-  name: form.video.fileName ?? 'video.mp4',
-  uri: form.video.uri,
-  type: form.video.mimeType ?? 'video/mp4',
-  size: form.video.fileSize ?? 0,
-},
-     thumbnail: {
-  name: form.thumbnail.fileName ?? 'thumbnail.jpg',
-  uri: form.thumbnail.uri,
-  type: form.thumbnail.mimeType ?? 'image/jpeg',
-  size: form.thumbnail.fileSize ?? 0,
-},
-      prompt: form.prompt,
-    });
-
-    Alert.alert('Success', 'Post uploaded successfully');
-    router.push('./home');
-  } catch (error) {
-    if (error instanceof Error) {
-      Alert.alert('Error', error.message);
-    } else {
-      Alert.alert('Error', String(error));
+    if (!form.prompt || !form.title || !form.video || !form.thumbnail) {
+      return Alert.alert('Please fill in all the fields');
     }
-  } finally {
-    setForm({
-      title: '',
-      video: null,
-      thumbnail: null,
-      prompt: '',
-    });
 
-    setUploading(false);
-  }
-};
+    if (!user) {
+      return Alert.alert('Error', 'You must be logged in to upload a video.');
+    }
 
+    setUploading(true);
 
+    try {
+      await createVideo({
+        userId: user.$id,
+        title: form.title,
+        video: {
+          name: form.video.fileName ?? 'video.mp4',
+          uri: form.video.uri,
+          type: form.video.mimeType ?? 'video/mp4',
+          size: form.video.fileSize ?? 0,
+        },
+        thumbnail: {
+          name: form.thumbnail.fileName ?? 'thumbnail.jpg',
+          uri: form.thumbnail.uri,
+          type: form.thumbnail.mimeType ?? 'image/jpeg',
+          size: form.thumbnail.fileSize ?? 0,
+        },
+        prompt: form.prompt,
+      });
+
+      Alert.alert('Success', 'Post uploaded successfully');
+      router.push('./home');
+    } catch (error) {
+      if (error instanceof Error) {
+        Alert.alert('Error', error.message);
+      } else {
+        Alert.alert('Error', String(error));
+      }
+    } finally {
+      setForm({
+        title: '',
+        video: null,
+        thumbnail: null,
+        prompt: '',
+      });
+
+      setUploading(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -123,10 +123,15 @@ const Create = () => {
 
           <TouchableOpacity onPress={() => openPicker('video')}>
             {form.video ? (
-              <Video
-                source={{ uri: form.video.uri }}
-                className="w-full h-64 rounded-2xl"
-                resizeMode={ResizeMode.COVER}
+              <VideoView
+                style={{
+                  width: '100%',
+                  height: 256,
+                  borderRadius: 16,
+                }}
+                player={player}
+                contentFit="cover"
+                allowsFullscreen={false}
               />
             ) : (
               <View className="w-full h-40 px-4 bg-black-100 rounded-2xl justify-center items-center">
@@ -145,7 +150,7 @@ const Create = () => {
               <Image
                 source={{ uri: form.thumbnail.uri }}
                 className="w-full h-64 rounded-2xl"
-                resizeMode={ResizeMode.COVER}
+                resizeMode="cover"
               />
             ) : (
               <View className="w-full h-16 px-4 bg-black-100 rounded-2xl justify-center items-center border-2 border-black-200 flex-row space-x-2">

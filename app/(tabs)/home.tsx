@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList, Image, RefreshControl } from 'react-native';
+import {StatusBar as RNStatusBar, View, Text, FlatList, Image, RefreshControl } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState } from 'react';
 import { Models } from 'react-native-appwrite';
@@ -55,6 +55,14 @@ const Home: React.FC = () => {
 
   const ListHeaderComponent = () => (
     <View className="my-6 px-4 space-y-4">
+       <View className="bg-primary" style={{ height: RNStatusBar.currentHeight }} />
+      
+      {/* Expo StatusBar configuration */}
+      <StatusBar 
+        style="light" 
+        backgroundColor="transparent"
+        translucent
+      />
       <View className="justify-between items-start flex-row mb-6">
         <View>
           <Text className="font-pmedium text-sm text-white">
@@ -101,7 +109,6 @@ const Home: React.FC = () => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       />
-      <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
 };
