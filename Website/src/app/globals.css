@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  /* Light theme colors */
+  --background: #ffffff;
+  --foreground: #2a2d3a;
+  --secondary: #f8fafc;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg: #ffffff;
+  --input-bg: #f1f5f9;
+
+  /* Accent colors */
+  --primary: #ff8500;
+  --primary-dark: #e6770a;
+  --primary-light: rgba(255, 133, 0, 0.1);
+  --secondary-accent: #8b5cf6;
+  --secondary-accent-light: rgba(139, 92, 246, 0.1);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #ff8500, #e6770a);
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  --gradient-text: linear-gradient(135deg, #ff8500, #ffb100);
+  --gradient-hero: linear-gradient(135deg, rgba(255, 133, 0, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.dark {
+  --background: #2a2d3a;
+  --foreground: #ffffff;
+  --secondary: #3c3f58;
+  --muted: #a0a3bd;
+  --border: #4a4d6a;
+  --card-bg: rgba(60, 63, 88, 0.6);
+  --nav-bg: #2a2d3a;
+  --input-bg: #3c3f58;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #2a2d3a;
+    --foreground: #ffffff;
+    --secondary: #3c3f58;
+    --muted: #a0a3bd;
+    --border: #4a4d6a;
+    --card-bg: rgba(60, 63, 88, 0.6);
+    --nav-bg: #2a2d3a;
+    --input-bg: #3c3f58;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-logo {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+/* Utility classes for consistent styling */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-input {
+  background-color: var(--input-bg);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary-accent {
+  color: var(--secondary-accent);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.border-custom {
+  border-color: var(--border);
+}
+
+.hover-primary:hover {
+  color: var(--primary);
+}
+
+.hover-secondary:hover {
+  color: var(--secondary-accent);
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 133, 0, 0.3);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+}
+
+/* Search input styling */
+.search-input {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 133, 0, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+/* Navigation active state */
+.nav-active {
+  color: var(--primary) !important;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}

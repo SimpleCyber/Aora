@@ -1,6 +1,6 @@
 import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Models } from 'react-native-appwrite';
 import { router } from 'expo-router';
 import useAppwrite from '../../lib/useAppwrite';
@@ -24,20 +24,27 @@ interface VideoType {
 
 const Profile: React.FC = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();
-  const { data: posts } = useAppwrite(() => getUserPosts(user?.$id || ''));
+  
+  // Memoize the getUserPosts function call to prevent unnecessary re-renders
+  const getUserPostsCallback = useCallback(() => {
+    return user?.$id ? getUserPosts(user.$id) : Promise.resolve([]);
+  }, [user?.$id]);
+  
+  const { data: posts } = useAppwrite(getUserPostsCallback);
 
-  const logout = async (): Promise<void> => {
+  const logout = useCallback(async (): Promise<void> => {
     try {
       await signOut();
       setUser(null);
       setIsLoggedIn(false);
-      router.replace('/sign-in');
+      router.replace('/');
     } catch (error) {
       console.error('Logout error:', error);
     }
-  };
+  }, [setUser, setIsLoggedIn]);
 
-  const renderItem = ({ item }: { item: Models.Document }) => {
+  const renderItem = useCallback(({ item }: { item: Models.Document }) => {
+    // Transform Models.Document to VideoCardProps format
     const videoData: VideoType = {
       $id: item.$id,
       title: item.title,
@@ -48,19 +55,19 @@ const Profile: React.FC = () => {
         avatar: item.creator?.avatar || ''
       }
     };
-    
-    return (
-      <View className="mb-4 mx-4">
-        <VideoCard video={videoData} />
-      </View>
-    );
-  };
+        
+    return <VideoCard video={videoData} />;
+  }, []);
 
-  const ListHeaderComponent = () => (
-    <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
+  const keyExtractor = useCallback((item: Models.Document) => item.$id, []);
+
+  // Memoize the header component to prevent re-renders
+  const ListHeaderComponent = useMemo(() => (
+    <View className="w-full justify-center items-center mt-6 mb-12 px-4">
       <TouchableOpacity
-        className="w-full flex items-end mb-10"
+        className="w-full items-end mb-10"
         onPress={logout}
+        activeOpacity={0.7}
       >
         <Image
           source={icons.logout}
@@ -78,46 +85,40 @@ const Profile: React.FC = () => {
       </View>
 
       <InfoBox
-        title={user?.username || ''}
+        title={user?.username || 'Unknown User'}
         containerStyles="mt-5"
         titleStyles="text-lg"
       />
 
-      <View className="mt-1 flex-row">
+      <View className="mt-5 flex-row">
         <InfoBox
           title={posts?.length?.toString() || '0'}
           subtitle="Posts"
-          containerStyles="mr-5"
+          containerStyles="mr-10"
           titleStyles="text-xl"
         />
         <InfoBox
           title="1.2k"
           subtitle="Followers"
-          containerStyles="mx-5"
-          titleStyles="text-xl"
-        />
-        <InfoBox
-          title="1.2k"
-          subtitle="Following"
-          containerStyles="ml-5"
           titleStyles="text-xl"
         />
       </View>
     </View>
-  );
+  ), [user?.avatar, user?.username, posts?.length, logout]);
 
-  const ListEmptyComponent = () => (
+  // Memoize the empty component
+  const ListEmptyComponent = useMemo(() => (
     <EmptyState
       title="No Videos Found"
-      subtitle="No videos found for this profile"
+      subtitle="No videos found for this search query"
     />
-  );
+  ), []);
 
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={posts}
-        keyExtractor={(item: Models.Document) => item.$id}
+        data={posts || []}
+        keyExtractor={keyExtractor}
         renderItem={renderItem}
         ListHeaderComponent={ListHeaderComponent}
         ListEmptyComponent={ListEmptyComponent}
