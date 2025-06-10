@@ -152,8 +152,8 @@ export const siteConfig = {
     { src: "/images/landing.jpg", alt: "Landing Screen", title: "Landing" },
     { src: "/images/auth.jpg", alt: "Sign up", title: "Sign up" },
     { src: "/images/home.jpg", alt: "Home Screen", title: "Home" },
-    { src: "/images/upload.jpg", alt: "Media Upload", title: "Upload" },
-    { src: "/images/search.jpg", alt: "Search Screen", title: "Search" },
+    { src: "/images/bookmark.jpg", alt: "Media Upload", title: "Bookmark" },
+    { src: "/images/create.jpg", alt: "Search Screen", title: "Create Post" },
     { src: "/images/profile.jpg", alt: "User Profile", title: "Profile" },
   ],
 }
