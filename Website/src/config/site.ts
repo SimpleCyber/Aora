@@ -76,7 +76,7 @@ export const siteConfig = {
       { name: "NativeWind", color: "#06b6d4" },
       { name: "Appwrite", color: "#f02e65" },
       { name: "TypeScript", color: "#3178c6" },
-      { name: "React Navigation", color: "#fca311" }, // optionally adding for Tab Navigation
+      { name: "React Navigation", color: "#fca311" }, 
     ],
   },
 
