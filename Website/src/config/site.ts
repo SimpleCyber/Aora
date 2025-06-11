@@ -8,7 +8,7 @@ export const siteConfig = {
   author: "Satyam Yadav",
 
   // URLs
-  downloadUrl: "https://github.com/SimpleCyber/Movie-App/raw/main/movieApp.apk", // update this later if you generate Aora-specific APK
+  downloadUrl: "https://github.com/SimpleCyber/Movie-App/raw/main/aora.apk",
   githubUrl: "https://github.com/SimpleCyber/Aora",
 
   // Hero section
